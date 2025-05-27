@@ -12,6 +12,10 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
+Route::get('/hello', function () {
+    return "Hello ".Auth::user()->name;
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
